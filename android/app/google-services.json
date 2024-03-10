@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "519456746920",
-    "project_id": "note-worthy-fe2a1",
-    "storage_bucket": "note-worthy-fe2a1.appspot.com"
+    "project_number": "949036812555",
+    "project_id": "note-worthy-f9ed7",
+    "storage_bucket": "note-worthy-f9ed7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:519456746920:android:abbcecb147e21b3efd019d",
+        "mobilesdk_app_id": "1:949036812555:android:82cd28e194550e530bfa0e",
         "android_client_info": {
           "package_name": "com.example.note_worthy"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBH8nN-Xm0MLL47rfyOe8XR3DNtpchlv7w"
+          "current_key": "AIzaSyD2U4zRIgy4omO1wSEnKLjQnTSNCpJVQgs"
         }
       ],
       "services": {
