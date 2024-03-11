@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:note_worthy/getdata.dart';
@@ -54,6 +53,7 @@ class _ShowdataState extends State<Showdata> {
         });
   }
 
+// scaffold body
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,16 +104,13 @@ class _ShowdataState extends State<Showdata> {
           }
         },
       ),
+      // floating action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Getdata(
-                        upd: false,
-                      )));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Getdata(upd: false)));
         },
-        backgroundColor: Colors.grey.shade800,
+        backgroundColor: const Color(0xff005273),
         child: const Icon(
           Icons.add,
           color: Colors.white,
@@ -190,6 +187,7 @@ class MessageNote extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Title of note
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 240),
                     child: Text(
@@ -203,6 +201,7 @@ class MessageNote extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 15),
+                  // message of note
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 240),
                     child: Text(
@@ -217,16 +216,18 @@ class MessageNote extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
+                  // date/time of note
                   Text(
                     time,
                     style: TextStyle(
-                        color: Colors.black.withOpacity(0.6),
+                        color: Colors.black.withOpacity(0.9),
                         fontSize: 11,
                         fontWeight: FontWeight.w500,
                         fontStyle: FontStyle.italic),
                   )
                 ],
               ),
+              // Delete icon
               Center(
                 child: IconButton(
                   onPressed: () {
@@ -235,7 +236,7 @@ class MessageNote extends StatelessWidget {
                   icon: Icon(
                     Icons.delete,
                     size: 25,
-                    color: Colors.grey.shade700,
+                    color: Colors.grey.shade800,
                   ),
                 ),
               )

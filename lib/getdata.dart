@@ -1,8 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:intl/intl.dart';
+import 'package:note_worthy/showdata.dart';
 
 class Getdata extends StatefulWidget {
   Getdata({this.title, this.message, this.time, required this.upd, this.docId});
@@ -315,7 +315,7 @@ class _GetdataState extends State<Getdata> {
     DateTime now = DateTime.now();
 
     String formatteddate = DateFormat(
-            'dd MMM,yyyy                                                          HH:mm:ss')
+            'dd MMM, yyyy                                                          HH:mm:ss')
         .format(now);
     date = formatteddate;
   }
@@ -340,27 +340,32 @@ class _GetdataState extends State<Getdata> {
       backgroundColor: const Color(0xff0a1a26),
       appBar: AppBar(
         backgroundColor: const Color(0xff0a1a26),
-        title: const Text(
-          'Add Notes',
-          style: TextStyle(fontSize: 26),
+        title: Text(
+          (widget.upd) ? 'Update note' : 'Add a new note',
+          style: const TextStyle(fontSize: 26),
         ),
+        // save data/ update data button
         actions: [
-          TextButton(
-              onPressed: () {
-                if (widget.upd == false) {
-                  savedata();
-                } else {
-                  updatedata();
-                }
-              },
-              child: Text(
-                (widget.upd) ? 'Update data' : 'Save data',
-              )),
-          TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Close'))
+          Padding(
+            padding: const EdgeInsets.only(right: 14),
+            child: TextButton(
+                onPressed: () {
+                  if (widget.upd == false) {
+                    savedata();
+                  } else {
+                    updatedata();
+                  }
+                },
+                child: Text(
+                  (widget.upd) ? 'Update data' : 'Save note',
+                  style: const TextStyle(fontSize: 18),
+                )),
+          ),
+          // TextButton(
+          //     onPressed: () {
+          //       Navigator.pop(context);
+          //     },
+          //     child: const Text('Close'))
         ],
       ),
       body: Padding(
@@ -368,12 +373,13 @@ class _GetdataState extends State<Getdata> {
         child: Column(
           children: [
             const SizedBox(height: 16),
+            // title input field
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
-                    color: const Color(0xFF4D4D4D),
+                    color: const Color(0xff005273),
                     borderRadius: BorderRadius.circular(30)),
                 child: Row(
                   children: [
@@ -386,7 +392,7 @@ class _GetdataState extends State<Getdata> {
                       child: TextField(
                         controller: titlecontroller,
                         decoration: const InputDecoration(
-                            hintText: "Enter title......",
+                            hintText: "Enter title...",
                             border: InputBorder.none),
                         style: const TextStyle(
                             color: Colors.white,
@@ -402,6 +408,7 @@ class _GetdataState extends State<Getdata> {
               ),
             ),
             const SizedBox(height: 12),
+            // date/time ui
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Align(
@@ -413,13 +420,14 @@ class _GetdataState extends State<Getdata> {
               ),
             ),
             const SizedBox(height: 16),
+            // message input field
             Expanded(
               child: Container(
                 height: double.infinity,
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xFF4D4D4D),
+                  color: const Color(0xff005273),
                 ),
                 child: TextField(
                   controller: messagecontroller,
@@ -427,7 +435,7 @@ class _GetdataState extends State<Getdata> {
                   maxLines: null,
                   textInputAction: TextInputAction.newline,
                   decoration: const InputDecoration(
-                    hintText: "Enter message....",
+                    hintText: "Enter message...",
                     border: InputBorder.none,
                   ),
                   style: const TextStyle(color: Colors.white, fontSize: 20),
