@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:note_worthy/firebase_options.dart';
-import 'package:note_worthy/getdata.dart';
+import 'package:note_worthy/showdata.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(
         useMaterial3: true,
       ),
-      home: Getdata(),
+      home: const Showdata(),
     );
   }
 }

@@ -5,6 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class Getdata extends StatefulWidget {
+  Getdata(
+      {super.key,
+      this.title,
+      this.message,
+      this.time,
+      required this.upd,
+      this.docId});
+
+  String? title;
+  String? message;
+  String? time;
+  bool upd;
+  String? docId;
+
   @override
   State<Getdata> createState() => _GetdataState();
 }
@@ -21,11 +35,8 @@ class _GetdataState extends State<Getdata> {
     final red = 150 + random.nextInt(106);
     final green = 150 + random.nextInt(106);
     final blue = 150 + random.nextInt(106);
-    final color = Color.fromARGB(255, red, green, blue);
-    return '#' +
-        red.toRadixString(16).padLeft(2, '0') +
-        green.toRadixString(16).padLeft(2, '0') +
-        blue.toRadixString(16).padLeft(2, '0');
+    //final color = Color.fromARGB(255, red, green, blue);
+    return '#${red.toRadixString(16).padLeft(2, '0')}${green.toRadixString(16).padLeft(2, '0')}${blue.toRadixString(16).padLeft(2, '0')}';
   }
 
 // save data method
