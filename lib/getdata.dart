@@ -314,7 +314,9 @@ class _GetdataState extends State<Getdata> {
   void Currentdate() {
     DateTime now = DateTime.now();
 
-    String formatteddate = DateFormat('dd MMM,yyyy HH:mm:ss').format(now);
+    String formatteddate = DateFormat(
+            'dd MMM,yyyy                                                          HH:mm:ss')
+        .format(now);
     date = formatteddate;
   }
 
@@ -340,7 +342,7 @@ class _GetdataState extends State<Getdata> {
         backgroundColor: const Color(0xff0a1a26),
         title: const Text(
           'Add Notes',
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 26),
         ),
         actions: [
           TextButton(
@@ -379,7 +381,7 @@ class _GetdataState extends State<Getdata> {
                       'Title:',
                       style: TextStyle(fontSize: 20),
                     ),
-                    const SizedBox(width: 7),
+                    const SizedBox(width: 9),
                     Expanded(
                       child: TextField(
                         controller: titlecontroller,

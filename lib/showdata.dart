@@ -62,7 +62,7 @@ class _ShowdataState extends State<Showdata> {
         backgroundColor: const Color(0xff0a1a26),
         title: const Text(
           'My Notes',
-          style: TextStyle(fontSize: 20),
+          style: TextStyle(fontSize: 26),
         ),
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
@@ -98,7 +98,7 @@ class _ShowdataState extends State<Showdata> {
             return ListView(
               reverse: false,
               padding:
-                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 12.0),
               children: messagetextwidget,
             );
           }
@@ -180,10 +180,10 @@ class MessageNote extends StatelessWidget {
         },
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(30),
             color: hexToColor(color!),
           ),
-          padding: const EdgeInsets.all(19),
+          padding: const EdgeInsets.all(18),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -195,7 +195,7 @@ class MessageNote extends StatelessWidget {
                     child: Text(
                       title == "" ? "Undefined" : title,
                       style: const TextStyle(
-                          fontSize: 23,
+                          fontSize: 22,
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
                       maxLines: 1,
@@ -210,13 +210,13 @@ class MessageNote extends StatelessWidget {
                       softWrap: true,
                       style: const TextStyle(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: 15,
                           fontWeight: FontWeight.w600),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 10),
                   Text(
                     time,
                     style: TextStyle(
