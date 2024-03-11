@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 
 import 'package:note_worthy/showdata.dart';
@@ -36,10 +36,11 @@ class _SplashScreenState extends State<SplashScreen> {
                   child: Image.asset('assets/logo.jpeg')),
             ),
           ),
-          const Expanded(
+          Expanded(
               child: Text(
             'Loading your worthy notes..!',
-            style: TextStyle(fontSize: 18, color: Colors.white),
+            style: GoogleFonts.lexend(
+                textStyle: const TextStyle(fontSize: 18, color: Colors.white)),
           ))
         ],
       ),

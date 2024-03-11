@@ -1,7 +1,9 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:note_worthy/getdata.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Showdata extends StatefulWidget {
   const Showdata({super.key});
@@ -60,9 +62,11 @@ class _ShowdataState extends State<Showdata> {
       backgroundColor: const Color(0xff0a1a26),
       appBar: AppBar(
         backgroundColor: const Color(0xff0a1a26),
-        title: const Text(
-          'My Notes',
-          style: TextStyle(fontSize: 26),
+        title: Center(
+          child: Text(
+            'My Notes',
+            style: GoogleFonts.lexend(textStyle: const TextStyle(fontSize: 30)),
+          ),
         ),
       ),
       body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
@@ -182,7 +186,7 @@ class MessageNote extends StatelessWidget {
           ),
           padding: const EdgeInsets.all(18),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -192,25 +196,27 @@ class MessageNote extends StatelessWidget {
                     constraints: const BoxConstraints(maxWidth: 240),
                     child: Text(
                       title == "" ? "Undefined" : title,
-                      style: const TextStyle(
-                          fontSize: 22,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
+                      style: GoogleFonts.lexend(
+                          textStyle: const TextStyle(
+                              fontSize: 22,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500)),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  const SizedBox(height: 10),
                   // message of note
                   ConstrainedBox(
                     constraints: const BoxConstraints(maxWidth: 240),
                     child: Text(
                       message == "" ? "Undefined" : message,
                       softWrap: true,
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600),
+                      style: GoogleFonts.kanit(
+                          textStyle: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600)),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),
@@ -233,11 +239,8 @@ class MessageNote extends StatelessWidget {
                   onPressed: () {
                     deletedata!(id);
                   },
-                  icon: Icon(
-                    Icons.delete,
-                    size: 25,
-                    color: Colors.grey.shade800,
-                  ),
+                  icon:
+                      Icon(Icons.delete, size: 26, color: Colors.grey.shade800),
                 ),
               )
             ],

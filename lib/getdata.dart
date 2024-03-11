@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:note_worthy/showdata.dart';
 
 class Getdata extends StatefulWidget {
   Getdata({this.title, this.message, this.time, required this.upd, this.docId});
@@ -335,6 +335,7 @@ class _GetdataState extends State<Getdata> {
     }
   }
 
+// main scaffold body
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff0a1a26),
@@ -342,7 +343,7 @@ class _GetdataState extends State<Getdata> {
         backgroundColor: const Color(0xff0a1a26),
         title: Text(
           (widget.upd) ? 'Update note' : 'Add a new note',
-          style: const TextStyle(fontSize: 26),
+          style: GoogleFonts.lexend(textStyle: const TextStyle(fontSize: 24)),
         ),
         // save data/ update data button
         actions: [
@@ -356,10 +357,9 @@ class _GetdataState extends State<Getdata> {
                     updatedata();
                   }
                 },
-                child: Text(
-                  (widget.upd) ? 'Update data' : 'Save note',
-                  style: const TextStyle(fontSize: 18),
-                )),
+                child: Text((widget.upd) ? 'Update data' : 'Save note',
+                    style: GoogleFonts.lexend(
+                        textStyle: const TextStyle(fontSize: 18)))),
           ),
           // TextButton(
           //     onPressed: () {
@@ -383,9 +383,10 @@ class _GetdataState extends State<Getdata> {
                     borderRadius: BorderRadius.circular(30)),
                 child: Row(
                   children: [
-                    const Text(
+                    Text(
                       'Title:',
-                      style: TextStyle(fontSize: 20),
+                      style: GoogleFonts.lexend(
+                          textStyle: const TextStyle(fontSize: 20)),
                     ),
                     const SizedBox(width: 9),
                     Expanded(
@@ -394,10 +395,11 @@ class _GetdataState extends State<Getdata> {
                         decoration: const InputDecoration(
                             hintText: "Enter title...",
                             border: InputBorder.none),
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                        style: GoogleFonts.kanit(
+                            textStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold)),
                         onChanged: (value) {
                           print(titlecontroller.text);
                         },
@@ -438,7 +440,9 @@ class _GetdataState extends State<Getdata> {
                     hintText: "Enter message...",
                     border: InputBorder.none,
                   ),
-                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                  style: GoogleFonts.kanit(
+                      textStyle:
+                          const TextStyle(color: Colors.white, fontSize: 20)),
                 ),
               ),
             ),
