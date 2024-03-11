@@ -15,6 +15,7 @@ class _ShowdataState extends State<Showdata> {
   final _firestore = FirebaseFirestore.instance;
   bool upd = false;
 
+// note delete method
   void confirmdelete(id) {
     showDialog(
         context: context,
@@ -56,7 +57,9 @@ class _ShowdataState extends State<Showdata> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff0a1a26),
       appBar: AppBar(
+        backgroundColor: const Color(0xff0a1a26),
         title: const Text(
           'My Notes',
           style: TextStyle(fontSize: 20),
@@ -138,6 +141,7 @@ class MessageNote extends StatelessWidget {
   final Function(String?)? deletedata;
   final String? color;
 
+// random color generator
   Color randomcolorgenerate() {
     final random = Random();
     return Color.fromARGB(
@@ -148,6 +152,7 @@ class MessageNote extends StatelessWidget {
     );
   }
 
+// hex to color method
   Color hexToColor(String hexCode) {
     final buffer = StringBuffer();
     if (hexCode.length == 6 || hexCode.length == 7) {
