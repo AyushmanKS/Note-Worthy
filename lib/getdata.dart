@@ -48,24 +48,24 @@ class _GetdataState extends State<Getdata> {
                   title: const Center(
                       child: Text(
                     'Error',
-                    style: TextStyle(fontSize: 30),
+                    style: TextStyle(fontSize: 22),
                   )),
                   content: const Column(
                     children: [
                       Icon(
                         Icons.cancel,
                         color: Colors.red,
-                        size: 130,
+                        size: 100,
                       ),
                       SizedBox(
                         height: 12,
                       ),
                       Center(
                           child: Text(
-                        'Update Some data Before Updating',
+                        'Edit some data Before Updating',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.bold),
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       )),
                     ],
                   ),
@@ -98,24 +98,22 @@ class _GetdataState extends State<Getdata> {
                       title: const Center(
                           child: Text(
                         'Data Saved',
-                        style: TextStyle(fontSize: 30),
+                        style: TextStyle(fontSize: 22),
                       )),
                       content: const Column(
                         children: [
                           Icon(
                             Icons.check_circle,
                             color: Colors.green,
-                            size: 130,
+                            size: 100,
                           ),
-                          SizedBox(
-                            height: 12,
-                          ),
+                          SizedBox(height: 2),
                           Center(
                               child: Text(
-                            'Your Data has been Updated Successfully',
+                            'Your note has been Updated Successfully',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           )),
                         ],
                       ),
@@ -142,24 +140,22 @@ class _GetdataState extends State<Getdata> {
                     title: const Center(
                         child: Text(
                       'Error',
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 22),
                     )),
                     content: const Column(
                       children: [
                         Icon(
                           Icons.cancel,
                           color: Colors.red,
-                          size: 130,
+                          size: 100,
                         ),
-                        SizedBox(
-                          height: 12,
-                        ),
+                        SizedBox(height: 2),
                         Center(
                             child: Text(
                           'Try Again',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold),
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         )),
                       ],
                     ),
@@ -190,27 +186,26 @@ class _GetdataState extends State<Getdata> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AlertDialog(
+                    backgroundColor: const Color.fromARGB(255, 1, 52, 72),
                     title: const Center(
                         child: Text(
                       'Error',
-                      style: TextStyle(fontSize: 30),
+                      style: TextStyle(fontSize: 22),
                     )),
                     content: const Column(
                       children: [
                         Icon(
                           Icons.cancel,
                           color: Colors.red,
-                          size: 130,
+                          size: 100,
                         ),
-                        SizedBox(
-                          height: 12,
-                        ),
+                        SizedBox(height: 2),
                         Center(
                             child: Text(
                           'Enter Some Data Before Saving',
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.bold),
+                              fontSize: 18, fontWeight: FontWeight.bold),
                         )),
                       ],
                     ),
@@ -241,27 +236,26 @@ class _GetdataState extends State<Getdata> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AlertDialog(
+                      backgroundColor: const Color.fromARGB(255, 1, 52, 72),
                       title: const Center(
                           child: Text(
                         'Data Saved',
-                        style: TextStyle(fontSize: 30),
+                        style: TextStyle(fontSize: 22),
                       )),
                       content: const Column(
                         children: [
                           Icon(
                             Icons.check_circle,
                             color: Colors.green,
-                            size: 130,
+                            size: 100,
                           ),
-                          SizedBox(
-                            height: 12,
-                          ),
+                          SizedBox(height: 2),
                           Center(
                               child: Text(
                             'Your Data has been saved Successfully',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.bold),
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           )),
                         ],
                       ),
