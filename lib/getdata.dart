@@ -62,7 +62,7 @@ class _GetdataState extends State<Getdata> {
                       ),
                       Center(
                           child: Text(
-                        'Edit some data Before Updating',
+                        'Edit some data Before updating',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
@@ -110,7 +110,7 @@ class _GetdataState extends State<Getdata> {
                           SizedBox(height: 2),
                           Center(
                               child: Text(
-                            'Your note has been Updated Successfully',
+                            'Your note has been updated successfully',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
@@ -252,7 +252,7 @@ class _GetdataState extends State<Getdata> {
                           SizedBox(height: 2),
                           Center(
                               child: Text(
-                            'Your Data has been saved Successfully',
+                            'Your data has been saved successfully',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
